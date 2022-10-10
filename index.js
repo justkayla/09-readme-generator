@@ -31,17 +31,20 @@ ${usage}
 ${credits}
 
 ## License
-${license}\
-${renderLicenseBadge(license)}\
+${license}<br>
+${renderLicenseBadge(license)}<br>
 ${renderLicenseLink(license)}
 
 ## Contributors
 ${contributors}
 
 ## Questions
-${questions}\
-Find me on GitHub: [${username}](https://github.com/${username})\
-Send me an email: ${email}`;
+${questions}<br>
+Find me on GitHub: [${username}](https://github.com/${username})<br>
+Send me an email: ${email}
+
+##### <p align="center">This readme file was created with ✨ by ${username}</p>
+`;
 
 // TODO: Create an array of questions for user input
 inquirer

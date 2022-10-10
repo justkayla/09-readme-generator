@@ -15,19 +15,25 @@ DESCRIPTION
 - [Questions](#questions)
 
 ## Installation
-INSTALL
+INSTALLATION
 
 ## Usage
-USAGE
+INSTRUCTIONS
 
 ## Credits
-COLLABORATORS
+CREDITS
 
 ## License
-MIT![MIT](https://img.shields.io/badge/License-MIT-brightgreen)[MIT](https://choosealicense.com/licenses/mit/)
+MIT<br>
+![MIT](https://img.shields.io/badge/License-MIT-brightgreen)<br>
+[MIT](https://choosealicense.com/licenses/mit/)
 
 ## Contributors
-GUIDELINES
+CONTRIBUTORS
 
 ## Questions
-CONACT MEFind me on GitHub: [justkayla](https://github.com/justkayla)Send me an email: kaylarjustice@gmail.com
+CONTACT ME<br>
+Find me on GitHub: [justkayla](https://github.com/justkayla)<br>
+Send me an email: kaylarjustice@gmail.com
+
+### <p align="center">This readme file was created with ✨ by justkayla</p>
