@@ -4,43 +4,8 @@ const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
-// const questions = [];
-
-const generateReadme = ({title, description, contents, installation, usage, credits, license, contributing, questions}) =>
-    `# Project-Title: ${title}
-
-    ## Description
-    ${description} 
-
-    ## Table of Contents    
-    - [Installation](#installation)
-    - [Usage](#usage)
-    - [Credits](#credits)
-    - [License](#license)
-    - [Contributing](#contributing)
-    - [Tests](#tests)
-    - [Questions](#questions)
-
-    ## Installation
-    ${installation}  
-
-    ## Usage
-    ${usage}  
-      
-    ## Credits
-    ${credits} 
-
-    ## License
-    ${license} 
-
-    ## Contributing
-    ${contributing} 
-
-    ## Questions
-    ${questions}`
-
-inquirer
-    .prompt([
+const questions = [
+    inquirer.prompt([
         {
             type: 'input',
             name: 'title',
@@ -49,7 +14,7 @@ inquirer
         {
             type: 'input',
             name: 'description',
-            message: 'Provide a description explaining the what, why and how of your project: ', 
+            message: 'Provide a description explaining the what, why, and how of your project: ', 
         },
         {
             type: 'input',
@@ -88,21 +53,33 @@ inquirer
             type: 'input',
             name: 'questions',
             message: 'Provide information on how people can submit questions: '
-        }
+        },
+        {
+            type: 'input', 
+            name: 'username',
+            message: 'Please provide your GitHub username: ',
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Please provide your email address: ',
+
+        },
     ])
-    .then((answers) => {
-       const readmePageContent = generateReadme(answers);
-       
-       fs.writeFile('README.md', readmePageContent, (err) =>
-       err ? console.log(err) : console.log('Successfully created README.md!')
-       );
-    });
+];
 
 // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
+function writeToFile(generateMarkdown, data) {
+    const readmePageContent = questions(data)
+    fs.writeToFile('./gen/README.md', readmePageContent, (err) =>
+    err ? console.log(err) : console.log('Successfully created README.md!')
+    );
+}
 
 // // TODO: Create a function to initialize app
-// function init() {}
+function init() {
+    writeToFile();
+}
 
 // // Function call to initialize app
-// init();
+init();
