@@ -3,9 +3,45 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
 
+// TODO: Create a function to generate markdown for README
+const generateReadme = ({title, description, installation, usage, credits, license, contributors, questions, username, email}) =>
+    `
+    # ${title}
+    
+    ## Description
+    ${description}
+
+    ## Table of Contents
+    - [Installation](#installation)
+    - [Usage](#usage)
+    - [Credits](#credits)
+    - [License](#license)
+    - [Contributors](#contributors)
+    - [Questions](#questions)
+
+    ## Installation
+    ${installation}
+
+    ## Usage
+    ${usage}
+
+    ## Credits
+    ${credits}
+
+    ## License
+    ${license}
+
+    ## Contributors
+    ${contributors}
+
+    ## Questions
+    ${questions}
+    Find me on GitHub: [${username}](https://github.com/${username})
+    Send me an email: ${email}`;
+
 // TODO: Create an array of questions for user input
-const questions = [
-    inquirer.prompt([
+inquirer
+    .prompt([
         {
             type: 'input',
             name: 'title',
@@ -14,12 +50,12 @@ const questions = [
         {
             type: 'input',
             name: 'description',
-            message: 'Provide a description explaining the what, why, and how of your project: ', 
+            message: 'Provide a description explaining the what, why, and how of your project: ',
         },
         {
             type: 'input',
             name: 'installation',
-            message: 'What are the steps required to install your project?'
+            message: 'What are the steps required to install your project?',
         },
         {
             type: 'input',
@@ -41,21 +77,21 @@ const questions = [
                 'GNU',
                 'ISC',
                 'MIT',
-                'Open',
-            ]            
+                'Open'
+            ]
         },
         {
-            type: 'contributing',
+            type: 'input',
             name: 'contributors',
             message: 'Provide any guidelines for external contributors: ',
         },
         {
             type: 'input',
             name: 'questions',
-            message: 'Provide information on how people can submit questions: '
+            message: 'Provide information on how people can submit questions: ',
         },
         {
-            type: 'input', 
+            type: 'input',
             name: 'username',
             message: 'Please provide your GitHub username: ',
         },
@@ -63,23 +99,20 @@ const questions = [
             type: 'input',
             name: 'email',
             message: 'Please provide your email address: ',
-
         },
     ])
-];
+    // TODO: Create a function to write README file
+    .then((data) => {
+        const readmePageContent = generateReadme(data);
 
-// TODO: Create a function to write README file
-function writeToFile(generateMarkdown, data) {
-    const readmePageContent = questions(data)
-    fs.writeToFile('./gen/README.md', readmePageContent, (err) =>
-    err ? console.log(err) : console.log('Successfully created README.md!')
-    );
-}
+        fs.writeFile('./gen/README.md', readmePageContent, (err) =>
+            err ? console.log(err) : console.log('Successfully created README.md!')
+        );
+    });
 
-// // TODO: Create a function to initialize app
-function init() {
-    writeToFile();
-}
+// TODO: Create a function to initialize app
+function init() {}
 
-// // Function call to initialize app
+// Function call to initialize app
 init();
+
