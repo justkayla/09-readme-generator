@@ -15,7 +15,6 @@ node index.js
 
 The requirements for the homework assignment are included below.
 
-
 ## User Story
 
 ```md
@@ -44,20 +43,16 @@ WHEN I click on the links in the Table of Contents
 THEN I am taken to the corresponding section of the README
 ```
 
-
 ## Link to repository on GitHub
 
 https://github.com/justkayla/09-readme-generator
 
-
 ## Screenshot
 
-Below is the working copy of my README.md generator.
+Below is an in-process copy of my README.md generator.
 
-
-
+![](screenshotreadme.png)
 
 ## Contributor
 
-Kayla Justice &copy;2022 
-    
+Kayla Justice &copy;2022   
