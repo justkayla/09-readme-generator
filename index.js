@@ -72,12 +72,12 @@ inquirer
             name: 'license',
             message: 'Select the applicable license for this project: ',
             choices: [
-                'Academic',
                 'Apache',
                 'GNU',
                 'ISC',
                 'MIT',
-                'Open'
+                'Open',
+                'N/A',
             ]
         },
         {
