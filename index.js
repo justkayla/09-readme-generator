@@ -8,6 +8,8 @@ const generateReadme = ({title, description, installation, usage, credits, licen
     `
     # ${title}
     
+    // renderLicenseBadge(); does this go here?
+    
     ## Description
     ${description}
 
@@ -30,6 +32,7 @@ const generateReadme = ({title, description, installation, usage, credits, licen
 
     ## License
     ${license}
+    // renderLicenseBadge(); does this go here?
 
     ## Contributors
     ${contributors}
@@ -112,6 +115,7 @@ inquirer
 
 // TODO: Create a function to initialize app
 function init() {}
+// Is this a function for running the app once user has open the terminal?
 
 // Function call to initialize app
 init();

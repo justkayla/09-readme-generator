@@ -23,21 +23,10 @@ function renderLicenseBadge(data) {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {
-
-
-}
-/*
-If link, display link
-If no link, return empty string
-*/
-
+function renderLicenseLink(license) {}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {}
-/*
-This is coded into other file...
-*/
 
 module.exports = generateMarkdown;
