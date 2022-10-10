@@ -1,46 +1,47 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generateMarkdown = require('./utils/generateMarkdown');
+const {renderLicenseBadge, renderLicenseLink} = require('./utils/generateMarkdown');
 
 // TODO: Create a function to generate markdown for README
 const generateReadme = ({title, description, installation, usage, credits, license, contributors, questions, username, email}) =>
     `
-    # ${title}
-    
-    // renderLicenseBadge(); does this go here?
-    
-    ## Description
-    ${description}
+# ${title}
 
-    ## Table of Contents
-    - [Installation](#installation)
-    - [Usage](#usage)
-    - [Credits](#credits)
-    - [License](#license)
-    - [Contributors](#contributors)
-    - [Questions](#questions)
+${renderLicenseBadge(license)}
 
-    ## Installation
-    ${installation}
+## Description
+${description}
 
-    ## Usage
-    ${usage}
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+- [Contributors](#contributors)
+- [Questions](#questions)
 
-    ## Credits
-    ${credits}
+## Installation
+${installation}
 
-    ## License
-    ${license}
-    // renderLicenseBadge(); does this go here?
+## Usage
+${usage}
 
-    ## Contributors
-    ${contributors}
+## Credits
+${credits}
 
-    ## Questions
-    ${questions}
-    Find me on GitHub: [${username}](https://github.com/${username})
-    Send me an email: ${email}`;
+## License
+${license}\
+${renderLicenseBadge(license)}\
+${renderLicenseLink(license)}
+
+## Contributors
+${contributors}
+
+## Questions
+${questions}\
+Find me on GitHub: [${username}](https://github.com/${username})\
+Send me an email: ${email}`;
 
 // TODO: Create an array of questions for user input
 inquirer
@@ -79,7 +80,6 @@ inquirer
                 'GNU',
                 'ISC',
                 'MIT',
-                'Open',
                 'N/A',
             ]
         },
@@ -112,11 +112,3 @@ inquirer
             err ? console.log(err) : console.log('Successfully created README.md!')
         );
     });
-
-// TODO: Create a function to initialize app
-function init() {}
-// Is this a function for running the app once user has open the terminal?
-
-// Function call to initialize app
-init();
-
