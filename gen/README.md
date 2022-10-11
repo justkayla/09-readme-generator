@@ -1,10 +1,10 @@
 
-# TITLE
+# Project Title
 
 ![MIT](https://img.shields.io/badge/License-MIT-brightgreen)
 
 ## Description
-DESCRIPTION
+Project description
 
 ## Table of Contents
 - [Installation](#installation)
@@ -15,13 +15,13 @@ DESCRIPTION
 - [Questions](#questions)
 
 ## Installation
-INSTALLATION
+Project installation
 
 ## Usage
-INSTRUCTIONS
+Project usage
 
 ## Credits
-CREDITS
+Project credits
 
 ## License
 MIT<br>
@@ -29,11 +29,11 @@ MIT<br>
 [MIT](https://choosealicense.com/licenses/mit/)
 
 ## Contributors
-CONTRIBUTORS
+Project guidelines
 
 ## Questions
-CONTACT ME<br>
+Contact me<br>
 Find me on GitHub: [justkayla](https://github.com/justkayla)<br>
 Send me an email: kaylarjustice@gmail.com
 
-### <p align="center">This readme file was created with ✨ by justkayla</p>
+##### <p align="center">This readme file was created with ✨ by justkayla</p>
